@@ -53,17 +53,13 @@ abstract public class ScriptBase extends AbstractScript implements Painter
 		);
 
 		initScript(tree);
+		
+		tree.registerListeners();
 
 		if (Client.isLoggedIn())
 		{
 			resetSkillTracker();
 		}
-	}
-
-	@Override
-	public void onExit()
-	{
-		resetSkillTracker();
 	}
 
 	@Override
@@ -82,7 +78,6 @@ abstract public class ScriptBase extends AbstractScript implements Painter
 	{
 		mainPaint.paint(g);
 	}
-
 
 	abstract public void initScript(Tree tree);
 
